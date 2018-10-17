@@ -53,6 +53,12 @@ public:
 		setM(b);
 		setS(c);
 	}
+	time_new(const time_new&obj)
+	{
+		this->h = new int(*obj.h);
+		this->m = new int(*obj.m);
+		this->s = new int(*obj.s);
+	}
 	void setH(int a)
 	{
 		*h = a;
@@ -89,12 +95,13 @@ void main()
 {
 	//конструктор с параметрами по умолчанию
 	
-	time_new t;	
-	time_new t2(5);
+	//time_new t;	
+	
 	time_new t3(11,30);
-	time_new t(5,0,8);
+	time_new t2(t3);
+	/*time_new t4(5,0,8);
+*/
 
-
-	t.print();
+	t2.print();
 	system("pause");
 }
